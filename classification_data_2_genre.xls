@@ -1,46 +1,85 @@
-label1,label2,DTaccuracy,RFaccuracy,MLPaccuracy,GSaccuracy
-blues,classical,0.8333333333333334,0.8333333333333334,0.48484848484848486,0.5757575757575758
-blues,country,0.7727272727272727,0.7727272727272727,0.48484848484848486,0.5303030303030303
-blues,disco,0.7878787878787878,0.7878787878787878,0.48484848484848486,0.5606060606060606
-blues,hiphop,0.8333333333333334,0.8333333333333334,0.48484848484848486,0.6060606060606061
-blues,jazz,0.8484848484848485,0.8484848484848485,0.5,0.5606060606060606
-blues,metal,0.8333333333333334,0.8333333333333334,0.48484848484848486,0.5151515151515151
-blues,pop,0.9848484848484849,0.9848484848484849,0.48484848484848486,0.6212121212121212
-blues,reggae,0.8484848484848485,0.8484848484848485,0.48484848484848486,0.7272727272727273
-blues,rock,0.6818181818181818,0.6818181818181818,0.48484848484848486,0.5757575757575758
-classical,country,0.9545454545454546,0.9545454545454546,0.48484848484848486,0.8333333333333334
-classical,disco,1.0,1.0,0.48484848484848486,0.5151515151515151
-classical,hiphop,0.9848484848484849,0.9848484848484849,0.48484848484848486,0.696969696969697
-classical,jazz,0.8787878787878788,0.8787878787878788,0.5,0.7727272727272727
-classical,metal,0.9393939393939394,0.9393939393939394,0.48484848484848486,0.5454545454545454
-classical,pop,0.9545454545454546,0.9545454545454546,0.48484848484848486,0.803030303030303
-classical,reggae,0.9696969696969697,0.9696969696969697,0.48484848484848486,0.5606060606060606
-classical,rock,1.0,1.0,0.48484848484848486,0.8181818181818182
-country,disco,0.8636363636363636,0.8636363636363636,0.48484848484848486,0.6818181818181818
-country,hiphop,0.9090909090909091,0.9090909090909091,0.48484848484848486,0.6060606060606061
-country,jazz,0.7727272727272727,0.7727272727272727,0.5,0.48484848484848486
-country,metal,0.9696969696969697,0.9696969696969697,0.48484848484848486,0.7727272727272727
-country,pop,0.8939393939393939,0.8939393939393939,0.48484848484848486,0.696969696969697
-country,reggae,0.7575757575757576,0.7575757575757576,0.48484848484848486,0.6515151515151515
-country,rock,0.6212121212121212,0.6212121212121212,0.48484848484848486,0.5606060606060606
-disco,hiphop,0.5606060606060606,0.5606060606060606,0.48484848484848486,0.5909090909090909
-disco,jazz,0.9393939393939394,0.9393939393939394,0.5,0.7424242424242424
-disco,metal,0.8787878787878788,0.8787878787878788,0.48484848484848486,0.5151515151515151
-disco,pop,0.8181818181818182,0.8181818181818182,0.48484848484848486,0.45454545454545453
-disco,reggae,0.7878787878787878,0.7878787878787878,0.48484848484848486,0.5757575757575758
-disco,rock,0.6212121212121212,0.6212121212121212,0.48484848484848486,0.5454545454545454
-hiphop,jazz,0.8939393939393939,0.8939393939393939,0.5,0.696969696969697
-hiphop,metal,0.9545454545454546,0.9545454545454546,0.48484848484848486,0.8333333333333334
-hiphop,pop,0.8484848484848485,0.8484848484848485,0.48484848484848486,0.4393939393939394
-hiphop,reggae,0.6515151515151515,0.6515151515151515,0.48484848484848486,0.6212121212121212
-hiphop,rock,0.8484848484848485,0.8484848484848485,0.48484848484848486,0.5151515151515151
-jazz,metal,0.9696969696969697,0.9696969696969697,0.5,0.7121212121212122
-jazz,pop,0.8939393939393939,0.8939393939393939,0.5,0.803030303030303
-jazz,reggae,0.8333333333333334,0.8333333333333334,0.5,0.42424242424242425
-jazz,rock,0.8636363636363636,0.8636363636363636,0.5,0.5151515151515151
-metal,pop,0.9696969696969697,0.9696969696969697,0.48484848484848486,0.5151515151515151
-metal,reggae,0.9242424242424242,0.9242424242424242,0.48484848484848486,0.8787878787878788
-metal,rock,0.7878787878787878,0.7878787878787878,0.48484848484848486,0.4696969696969697
-pop,reggae,0.8787878787878788,0.8787878787878788,0.48484848484848486,0.6363636363636364
-pop,rock,0.8787878787878788,0.8787878787878788,0.48484848484848486,0.5303030303030303
-reggae,rock,0.7727272727272727,0.7727272727272727,0.48484848484848486,0.6212121212121212
+label1,label2,DTaccuracy,RFaccuracy,MLPaccuracy,DTestimator,RFestimator,MLPestimator
+blues,classical,0.84375,0.98125,0.76875,"DecisionTreeClassifier(max_depth=4, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500),
+              learning_rate='invscaling')"
+blues,country,0.675,0.75,0.575,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0)","RandomForestClassifier(min_samples_leaf=4, n_estimators=500, random_state=0)","MLPClassifier(activation='tanh', hidden_layer_sizes=(50, 50, 50),
+              learning_rate='adaptive')"
+blues,disco,0.775,0.86875,0.625,"DecisionTreeClassifier(max_depth=2, random_state=0)","RandomForestClassifier(n_estimators=1000, random_state=0)","MLPClassifier(activation='logistic', hidden_layer_sizes=(250, 500))"
+blues,hiphop,0.83125,0.90625,0.7,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500, 250),
+              learning_rate='invscaling', solver='sgd')"
+blues,jazz,0.66875,0.90625,0.58125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(50, 100, 50))"
+blues,metal,0.89375,0.88125,0.68125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=2, random_state=0)","RandomForestClassifier(n_estimators=1000, random_state=0)","MLPClassifier(activation='logistic', alpha=0.05, hidden_layer_sizes=(250, 500),
+              learning_rate='invscaling')"
+blues,pop,0.85625,0.9875,0.71875,"DecisionTreeClassifier(max_depth=4, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', learning_rate='adaptive', solver='sgd')"
+blues,reggae,0.85625,0.8375,0.56875,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=2, random_state=0)","RandomForestClassifier(max_depth=2, n_estimators=500, random_state=0)","MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(1000, 1000),
+              learning_rate='adaptive', solver='sgd')"
+blues,rock,0.56875,0.75625,0.56875,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)","RandomForestClassifier(min_samples_leaf=4, n_estimators=500, random_state=0)","MLPClassifier(activation='logistic', alpha=0.05, hidden_layer_sizes=(250, 500))"
+classical,country,0.88125,0.93125,0.74375,"DecisionTreeClassifier(max_depth=2, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', hidden_layer_sizes=(1000, 1000),
+              solver='sgd')"
+classical,disco,0.95,0.98125,0.7625,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=2, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(hidden_layer_sizes=(250, 500), learning_rate='adaptive')"
+classical,hiphop,0.91875,0.9625,0.83125,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', alpha=0.05,
+              hidden_layer_sizes=(250, 500, 250), learning_rate='invscaling')"
+classical,jazz,0.8,0.80625,0.71875,"DecisionTreeClassifier(max_depth=4, random_state=0, splitter='random')","RandomForestClassifier(n_estimators=500, random_state=0)","MLPClassifier(activation='logistic', alpha=0.05,
+              hidden_layer_sizes=(1000, 1000), learning_rate='adaptive')"
+classical,metal,0.95,0.9875,0.79375,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', hidden_layer_sizes=(1000, 1000),
+              solver='sgd')"
+classical,pop,0.95,0.98125,0.7375,"DecisionTreeClassifier(max_depth=2, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(50, 100, 50))"
+classical,reggae,0.86875,0.98125,0.83125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=2, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500, 250),
+              learning_rate='adaptive', solver='sgd')"
+classical,rock,0.8875,0.9375,0.75,"DecisionTreeClassifier(max_depth=4, min_samples_leaf=2, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', hidden_layer_sizes=(1000, 1000),
+              solver='sgd')"
+country,disco,0.8125,0.8,0.675,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', hidden_layer_sizes=(1000, 1000),
+              learning_rate='adaptive', solver='sgd')"
+country,hiphop,0.7375,0.8875,0.75,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', alpha=0.05,
+              hidden_layer_sizes=(1000, 1000), learning_rate='invscaling')"
+country,jazz,0.83125,0.89375,0.6125,"DecisionTreeClassifier(max_depth=4, min_samples_leaf=4, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(1000, 1000),
+              learning_rate='adaptive', solver='sgd')"
+country,metal,0.7875,0.93125,0.75,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)","RandomForestClassifier(n_estimators=500, random_state=0)","MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500, 250),
+              learning_rate='adaptive')"
+country,pop,0.88125,0.91875,0.71875,"DecisionTreeClassifier(max_depth=2, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', alpha=0.05, hidden_layer_sizes=(250, 500),
+              learning_rate='adaptive')"
+country,reggae,0.69375,0.79375,0.51875,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(alpha=0.05, hidden_layer_sizes=(50, 50, 50))"
+country,rock,0.61875,0.75,0.55625,"DecisionTreeClassifier(max_depth=2, random_state=0)","RandomForestClassifier(min_samples_leaf=2, random_state=0)","MLPClassifier(activation='logistic', hidden_layer_sizes=(250, 500, 250),
+              learning_rate='invscaling')"
+disco,hiphop,0.7,0.8125,0.45625,"DecisionTreeClassifier(max_depth=4, min_samples_leaf=4, random_state=0,
+                       splitter='random')","RandomForestClassifier(min_samples_leaf=2, random_state=0)",MLPClassifier(activation='identity')
+disco,jazz,0.8,0.9375,0.69375,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(50, 100, 50))"
+disco,metal,0.84375,0.875,0.63125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)","RandomForestClassifier(n_estimators=500, random_state=0)",MLPClassifier(alpha=0.05)
+disco,pop,0.83125,0.80625,0.6125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0)","RandomForestClassifier(n_estimators=500, random_state=0)","MLPClassifier(alpha=0.05, learning_rate='adaptive')"
+disco,reggae,0.76875,0.78125,0.55,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=8, random_state=0)","RandomForestClassifier(min_samples_leaf=8, n_estimators=500, random_state=0)","MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(250, 500, 250),
+              learning_rate='adaptive', solver='sgd')"
+disco,rock,0.60625,0.74375,0.46875,"DecisionTreeClassifier(max_depth=4, min_samples_leaf=2, random_state=0,
+                       splitter='random')","RandomForestClassifier(max_depth=2, min_samples_leaf=4, n_estimators=1000,
+                       random_state=0)","MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(250, 500, 250),
+              solver='sgd')"
+hiphop,jazz,0.91875,0.9375,0.8125,"DecisionTreeClassifier(max_depth=2, random_state=0)","RandomForestClassifier(n_estimators=500, random_state=0)","MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(250, 500),
+              learning_rate='invscaling')"
+hiphop,metal,0.775,0.8875,0.61875,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500, 250),
+              solver='sgd')"
+hiphop,pop,0.76875,0.8375,0.44375,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', hidden_layer_sizes=(1000, 1000),
+              solver='sgd')"
+hiphop,reggae,0.6625,0.69375,0.6375,"DecisionTreeClassifier(max_depth=2, random_state=0)","RandomForestClassifier(n_estimators=1000, random_state=0)","MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500, 250))"
+hiphop,rock,0.7625,0.84375,0.63125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='logistic', alpha=0.05,
+              hidden_layer_sizes=(1000, 1000), learning_rate='adaptive')"
+jazz,metal,0.89375,0.9875,0.8375,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')","RandomForestClassifier(n_estimators=1000, random_state=0)","MLPClassifier(activation='tanh', learning_rate='adaptive', solver='sgd')"
+jazz,pop,0.90625,0.95,0.7875,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500),
+              learning_rate='adaptive')"
+jazz,reggae,0.8375,0.85,0.78125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=2, random_state=0,
+                       splitter='random')","RandomForestClassifier(min_samples_leaf=8, n_estimators=500, random_state=0)","MLPClassifier(activation='tanh', hidden_layer_sizes=(250, 500), solver='sgd')"
+jazz,rock,0.7375,0.84375,0.5,"DecisionTreeClassifier(max_depth=4, min_samples_leaf=2, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(50, 50, 50))"
+metal,pop,0.875,0.9875,0.53125,"DecisionTreeClassifier(max_depth=2, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='identity', learning_rate='invscaling')"
+metal,reggae,0.825,0.91875,0.73125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0,
+                       splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', hidden_layer_sizes=(1000, 1000), solver='sgd')"
+metal,rock,0.70625,0.8875,0.5875,"DecisionTreeClassifier(max_depth=2, random_state=0, splitter='random')",RandomForestClassifier(random_state=0),"MLPClassifier(alpha=0.05, hidden_layer_sizes=(50, 100, 50))"
+pop,reggae,0.76875,0.825,0.53125,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=2, random_state=0)","RandomForestClassifier(min_samples_leaf=2, n_estimators=1000, random_state=0)","MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(250, 500, 250),
+              solver='sgd')"
+pop,rock,0.8125,0.9,0.625,"DecisionTreeClassifier(max_depth=2, random_state=0)",RandomForestClassifier(random_state=0),"MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(250, 500),
+              learning_rate='invscaling', solver='sgd')"
+reggae,rock,0.725,0.86875,0.5,"DecisionTreeClassifier(max_depth=2, min_samples_leaf=4, random_state=0)","RandomForestClassifier(n_estimators=1000, random_state=0)","MLPClassifier(activation='tanh', alpha=0.05, hidden_layer_sizes=(50, 50, 50),
+              learning_rate='invscaling')"
